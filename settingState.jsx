@@ -1,5 +1,4 @@
-var React = require("react"); //importing React from the react package
-                              //load the package and make it available for use in the current file.
+var React = require("react");
 
 
 class WhatIsYourName extends React.Component {
@@ -9,8 +8,11 @@ class WhatIsYourName extends React.Component {
                           //passed to the component when it is created
 
     super(props);     //Passing the props as an argument to the parent class's
-    this.state = { name: "" };
+    this.state = { name: "" }; //sets the initial state of this component
+    // the state is being set to an object with a single property 'name' that
+    // has an initial value of an empty string
     this.onNameChange = this.onNameChange.bind(this); //setting the value of this keyword inside a function
+    //so that the onNameChange function can later refer to `this` of the component
   }
 
 
@@ -22,7 +24,7 @@ class WhatIsYourName extends React.Component {
   // The value property of the input field element contains the current value of the input field.
 
   render() {
-    let userNameGreeting;            //passing the value of name to the variable
+    let userNameGreeting;
     if (this.state.name===""){
       userNameGreeting="Enter your name.";
     }else{
